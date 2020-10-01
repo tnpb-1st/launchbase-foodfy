@@ -1,0 +1,21 @@
+### container
+
+- display: grid;
+- grid-template-columns; # define o número de colunas do grid;
+- grid-template-rows; # define o número de linhas do grid;
+- grid-gap # define nossos espaçamentos;
+    grid-row-gap # define o espaçamento da linha
+    grid-column-gap # define o espaçamento das colunas
+- grid-template-areas; ?
+
+## itens
+
+- grid-column # define onde vai ficar o item na nossa coluna
+    - grid-column-start
+    - grid-column-end
+
+-grid-row # define onde vai ficar o item na nossa linha
+    - grid-row-start
+    - grid-row-end
+
+- grid-area
