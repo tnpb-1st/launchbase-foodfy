@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça Receitas deliciosas no foodfy">
+    <link rel="stylesheet" href="/styles/index.css">
+    <title>Foodfy</title>
+</head>
+<body>
+    <header>
+        <img src="/images/black_logo.png" id="logo">
+        <div id="links">
+            <a id="first" href="/about">Sobre</a>
+            <a href="/recipes">Receitas</a>
+        </div>
+    </header>
+    
+    <section id="background">
+        <div id="text-container">
+            <p id="title">As melhores Receitas</p>
+        
+            <p id="description">Aprenda a construir os melhores pratos
+            com receitas criadas por profissionais
+            do mundo inteiro.</p>
+        </div>
+
+        <img id="chef" src="/images/chef.png">
+    </section>
+
+    <div class="container">
+        <h2>Mais acessadas</h2>
+        
+        <section class="cards">
+            {% for recipe in recipes %} 
+                <div class="card" id={{recipe.id}}>
+                    <img class="food-image" src="{{recipe.image}}" alt="{{recipe.title}}">
+                    <p class="food-title">{{recipe.title}}</p>
+                    <p class="food-author">por {{recipe.author}}</p>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+
+    {# <div class="modal-overlay">
+        <div class="modal">
+            <img class="modal-food-image" src="images/burger.png">
+            <p class="modal-food-title">Comida</p>
+            <p class="modal-food-author">Autor</p>
+            <div class="close-modal">
+                <a>Fechar modal</a>
+            </div>
+
+        </div>
+    </div> #}
+
+    <footer>
+        <p>Todos direitos reservados, receitas Foodfy.</p>
+    </footer>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>

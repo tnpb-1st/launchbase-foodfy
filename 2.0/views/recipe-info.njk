@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Conheça Receitas deliciosas no foodfy">
+    <link rel="stylesheet" href="/styles/recipe-info.css">
+    <title>Receitas</title>
+</head>
+<body>
+    <header>
+        <a href="/"><img src="/images/black_logo.png" id="logo"></a>
+        <div id="links">
+            <a id="first" href="/about">Sobre</a>
+            <a id = "selected" href="/recipes">Receitas</a>
+        </div>
+    </header>
+
+    <section class="start">
+        <img src={{recipe.image}}>
+        <h1>{{recipe.title}}</h1>
+        <p>por {{recipe.author}}</p>
+    </section>
+
+    <section class="recipe-info">
+        <div class="ingredients">
+            <div class="recipe-header">
+                <h1>Ingredientes</h1>
+                <p id="button1" class='toggle-button'>Esconder</p>
+            </div>
+            
+            <ul id="div1">
+                {% for item in recipe.ingredients %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="prepare">
+            <div class="recipe-header">
+                <h1>Modo de Preparo</h1>
+                <p id="button2" class='toggle-button'>Esconder</p>
+
+            </div>
+
+            <ol id=div2>
+                {% for item in recipe.preparation %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ol>
+
+        </div>
+
+        <div class="information">
+            <div class="recipe-header">
+                <h1>Informações Adicionais</h1>
+                <p id="button3" class='toggle-button'>Esconder</p>
+            </div>
+
+            <p id=div3>{{recipe.information}}</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Todos direitos reservados, receitas Foodfy.</p>
+    </footer>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>
