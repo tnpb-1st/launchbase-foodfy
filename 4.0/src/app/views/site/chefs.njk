@@ -1,0 +1,25 @@
+{% extends './layout.njk'%}
+
+{% block content %}
+<div class="chefs-page-card-container">
+    {% for chef in chefs %}
+    
+        <div class="chef-card">
+            <div>
+                <img src="{{chef.avatar_url}}" alt="">
+            </div>
+
+            <div>
+                <p>{{chef.name}}</p>
+                {% if chef.recipes_number > 1 %}
+                    <p>{{chef.recipes_number}} receitas</p>
+                {% else %}
+                    <p>{{chef.recipes_number}} receita</p>
+                {% endif %}
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
