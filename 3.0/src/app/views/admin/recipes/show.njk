@@ -1,0 +1,54 @@
+{% extends 'admin/layout.njk' %}
+
+{% block content %}
+    <div class="show-title">
+        <h2>Receita: {{recipe.title}}</h2>
+        <a href="/admin/recipes/{{recipe.id}}/edit">Editar receita</a>
+    </div>
+    <section class="start">
+        <img src={{recipe.image}}>
+        <h1>{{recipe.title}}</h1>
+        {% for chef in chefsOptions %}
+            {% if chef.id == recipe.chef_id %}
+                <p>por {{chef.name}}</p>
+            {% endif %}
+        {% endfor %}
+    </section>
+
+    <section class="recipe-info">
+        <div class="ingredients">
+            <div class="recipe-header">
+                <h1>Ingredientes</h1>
+            </div>
+            
+            <ul id="div1">
+                {% for item in recipe.ingredients %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="prepare">
+            <div class="recipe-header">
+                <h1>Modo de Preparo</h1>
+            </div>
+
+            <ul id=div2>
+                {% for item in recipe.steps %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        <div class="information">
+            <div class="recipe-header">
+                <h1>Informações Adicionais</h1>
+            </div>
+
+            <p id=div3>{{recipe.information}}</p>
+        </div>
+    </section>
+    <script src="/create.js"></script>
+{% endblock%}
+
