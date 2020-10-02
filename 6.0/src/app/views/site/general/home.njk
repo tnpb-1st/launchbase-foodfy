@@ -1,0 +1,30 @@
+{% extends '../layout.njk' %}
+{% import "../parts/section-recipes.njk" as section%}
+
+{% block content %}
+
+    <section id="homepage-background">
+        <div>
+            <p>As melhores Receitas</p>
+        
+            <p>Aprenda a construir os melhores pratos
+            com receitas criadas por profissionais
+            do mundo inteiro.</p>
+        </div>
+
+        <img id="chef-homepage-logo" src="/images/chef.png">
+    </section>
+
+    <div id="homepage-recipe-container">
+        <h2>Mais acessadas</h2>
+        
+        {{section.recipes(recipes)}}
+
+        <div class="pagination"
+            data-page = {{pagination.page}}
+            data-total = {{pagination.total}}
+        ></div>
+        
+    </div>
+
+{% endblock %}

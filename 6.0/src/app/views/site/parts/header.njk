@@ -1,0 +1,24 @@
+<header id="general-header">    
+    <a href="/"><img src="/images/black_logo.png" id="logo"></a>
+    
+    <div id="general-header-links">
+        <a id="first" href="/about">Sobre</a>
+        <a href="/recipes">Receitas</a>
+        <a href="/chefs">Chefs</a>
+    </div>
+
+    <div class="recipe-search">
+        <form action="/recipes/search" method="GET">
+            <input 
+            type="text" 
+            name="filter"
+            placeholder="Buscar uma receita"
+            {% if search.term %}
+                value="{{search.term}}"
+            {% endif %}
+            >
+
+            <button class="filter-button" type="submit">Buscar</button>
+        </form>
+    </div>
+</header>

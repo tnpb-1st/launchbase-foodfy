@@ -21,6 +21,7 @@ Now, when we delete a chef, we also delete his/her recipes and the files of the 
 + PostgreSQL
 <br/><br/>
 ### How to open :clipboard:
-For this time, please use the terminal to enter in 5.0 folder and write the following commands:
+Create proper Postgres Database, then:
+use the terminal to enter in 5.0 folder and write the following commands:
   + npm install (wait the installation to finish)
   + npm start

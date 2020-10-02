@@ -1,0 +1,114 @@
+{% extends '../layout.njk' %}
+
+{% block content %}
+<form id="card" method="POST" action="/admin/recipes?_method=PUT" enctype="multipart/form-data">
+    <div class="creation-header">
+        <h3>Editando Receita</h3>
+        <button type="submit">Salvar receita</button>
+    </div>
+    
+    <section class="details">
+        
+        <div class="item">
+            <div>Imagem da Receita</div>
+            <div id="input-container">
+                <div id="photos-upload">
+                    <i class="material-icons">add</i>
+                    <input 
+                        id="photos-input"
+                        type="file" 
+                        name="photos"
+                        multiple
+                        accept="image/*" 
+                        onchange="PhotosUpload.handleFileInput(event)"
+                    >
+                </div>
+
+                <div id="photos-preview">
+                    {% for image in files %}
+                        <div class="photo" id = "{{image.id}}">
+                            <img src="{{image.src}}" alt="{{image.name}}">
+                            <i 
+                                class="material-icons"
+                                onclick="PhotosUpload.removeOldPhoto(event)"   
+                            >close</i>
+                        </div>
+                    {% endfor %}
+                    <input type="hidden" name="removed_files">
+                </div>
+                </div>
+        </div>
+
+        <div class="item">
+            <div>Título da Receita</div>
+            <div><input type="text" name="title" placeholder="" value = "{{recipe.title}}"></div>
+        </div>
+
+        <div class="item">
+            <div>Chef</div>
+            <div>
+                <select name="chef_id" id="chef-field" style="color: black;">
+                {% for chef in chefsOptions %}
+                    <option value="{{chef.id}}"
+                    {% if recipe.chef_id == "{{chef.id}}" %} selected {% endif %}
+                    >{{chef.name}}</option>
+                {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="item" id="ingredients">
+            <div>Ingredientes</div>
+            <div class="ingredient">
+                {% for ingredient in recipe.ingredients %}
+                    <input id="ingredient-item" type="text" name="ingredients[]" value="{{ingredient}}" 
+                    placeholder="" />
+                {% endfor %}
+            </div>
+        </div>
+        <button type="button" id="ingredient-button" class="add-items-button">Adicionar novo ingrediente</button>
+
+        <div class="item" id="item-steps">
+            <div>Modo de Preparo</div>
+            <div class="steps">
+                {% for step in recipe.preparation %}
+                    <input id="step-item" type="text" name="preparation[]" value="{{step}}" placeholder="" />
+                {% endfor %}
+            </div>
+        </div>
+        <button type="button" id="steps-button" class="add-items-button">Adicionar novo passo</button>
+
+        <div class="item">
+            <div>Informações Adicionais</div>
+            <div id = "additional-information">
+                    <textarea 
+                        name = "information" 
+                        value = "{{recipe.information}}"
+                        >{{recipe.information}}</textarea>
+            </div>
+        </div>
+
+        
+        <input type="hidden" name="id" value="{{recipe.id}}">
+    </section>
+</form>
+
+
+<form id="form-delete" action="/admin/recipes?_method=DELETE" method="post">
+    <input type="hidden" name="id" value="{{recipe.id}}">
+    <button type="submit">Deletar</button>
+</form>
+
+<script src="/create.js"></script>
+
+<script>
+    const formDelete = document.getElementById('form-delete');
+    formDelete.addEventListener('submit', () => {
+        const confirmation = confirm("Tem certeza de que deseja deletar essa receita ?");
+        if (!confirmation) {
+            event.preventDefault();
+        }
+    });
+</script>
+
+{% endblock content %}

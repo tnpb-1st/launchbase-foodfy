@@ -8,12 +8,12 @@ CREATE TABLE "recipes" (
   "ingredients" text[],
   "preparation" text[],
   "information" text,
-  "created_at" date NOT NULL DEFAULT (now())
+  "created_at" timestamp NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "chefs" (
   "id" SERIAL UNIQUE PRIMARY KEY NOT NULL,
   "name" text,
   "avatar_url" text,
-  "created_at" date
+  "created_at" timestamp
 );

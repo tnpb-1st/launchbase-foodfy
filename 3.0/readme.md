@@ -17,5 +17,5 @@ In this challenge, we moved the data from a Js file to a Json file using **fs** 
 <br/><br/>
 ### How to open :clipboard:
 For this time, please use the terminal to enter in 3.0 folder and write the following commands:
-    + npm install (wait the installation to finish)
-    + npm start
+  + npm install (wait the installation to finish)
+  + npm start

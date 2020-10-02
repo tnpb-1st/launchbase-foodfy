@@ -15,6 +15,6 @@ For this challenge, we were asked to re-build the code of the previous exercise(
 <br/><br/>
 ### How to open :clipboard:
 For this time, please use the terminal to enter in 2.0 folder and write the following commands:
-    + npm install (wait the installation to finish)
-    + npm start
-    + open your browser and type [localhost:5000](http://localhost:5000/)
+  + npm install (wait the installation to finish)
+  + npm start
+  + open your browser and type [localhost:5000](http://localhost:5000/)

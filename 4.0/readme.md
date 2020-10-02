@@ -19,6 +19,7 @@ We can delete any recipe, but we can only delete a chief if He hasn't any recipe
 + PostgreSQL
 <br/><br/>
 ### How to open :clipboard:
-For this time, please use the terminal to enter in 4.0 folder and write the following commands:
-    + npm install (wait the installation to finish)
-    + npm start
+Create proper Postgres Database, then:
+use the terminal to enter in 4.0 folder and write the following commands:
+  + npm install (wait the installation to finish)
+  + npm start
