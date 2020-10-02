@@ -1,0 +1,25 @@
+       <div class="item">
+            <div>Nome</div>
+            <div><input type="text" name="name" placeholder="" value = "{{chef.name}}"></div>
+        </div>
+
+        <div class="item">
+            <div>Avatar</div>
+            <div class="chef-avatar-container" id="unborder">
+                <input 
+                    id="chef-avatar-input"
+                    type="file" 
+                    name="avatar" 
+                    placeholder="" 
+                    accept="image/*"
+                    onchange ="AvatarUpload.setFilename(event)"
+                >
+
+                <div id="file-details">{{file.path}}</div>
+
+                <div id="chef-avatar-details">
+                    <p class="button">Enviar Avatar</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,24 @@
+{% extends './layout.njk'%}
+
+{% block content%}
+
+    <div id="homepage-recipe-container">
+        <h2 id ="search-heading">Buscando por "{{filter}}"</h2>
+        <section class="recipes-card-container">
+            {% for recipe in recipes %}
+                <div class="recipe-card" id={{recipe.id}}>
+                    <img class="food-image" src="{{recipe.src}}" alt="{{recipe.title}}">
+                    <p class="food-title">{{recipe.title}}</p>
+                    <p class="food-author">por {{recipe.chef_name}}</p>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+
+    <div class="pagination"
+            data-page = {{pagination.page}}
+            data-total = {{pagination.total}}
+            data-filter = {{filter}}
+    ></div>
+
+{% endblock %}

@@ -95,9 +95,12 @@ module.exports = {
                 
                 if (recipes[0]) {
                     total =  Math.ceil(recipes[0].total/limit);
+                }else {
+                    total = 0
                 }
 
                 const pagination = {
+                    total,
                     page
                 }
                 return res.render('./site/index', {recipes, pagination, filter});
@@ -126,6 +129,8 @@ module.exports = {
             callback(recipes) {
                 if (recipes[0]) {
                     total =  Math.ceil(recipes[0].total/limit);
+                }else {
+                    total = 0
                 }
 
                 const pagination = {

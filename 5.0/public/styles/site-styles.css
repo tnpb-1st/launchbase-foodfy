@@ -378,3 +378,36 @@ footer p {
     font-size: 14px;
     line-height: 16px;
 }
+
+/* Recipe gallery */
+
+.gallery {
+    width: 100%;
+}
+
+.gallery .highlight > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery .gallery-preview {
+    justify-content: flex-end;
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.gallery .gallery-preview img {
+    height: 50px;
+    width: 50px;
+    border-radius: 3.5px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: 200ms;
+    object-fit: cover;
+}
+
+.gallery .gallery-preview img:hover,
+.gallery .gallery-preview img.active {
+    opacity: 1;
+}
