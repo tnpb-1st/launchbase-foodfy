@@ -1,0 +1,113 @@
+:root {
+    --rocketseat-color: #6558C3;
+    --main-font: 'Roboto', sans-serif;
+}
+
+/* GENERAL */
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--main-font);
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    margin-top: 2.4%;
+    display: flex;
+    justify-content: center;
+}
+
+h2:first-child {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 10%;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Login Index page */
+
+.login-container {
+    display: grid;
+    margin: 0 32%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, max-content);
+    justify-items: center;
+    gap: 35px;
+}
+
+.login-field {
+    width: 100%;
+}
+
+.login-field input {
+    height: 49px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 1px 14px;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    font-size: 16px;
+    outline-color: #6558C3;
+}
+
+.login-field input::placeholder,
+.login-field input::-ms-input-placeholder {
+    font-size: 16px;
+    color: #999999;
+}
+
+.button-containers {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 238px;
+}
+
+.button-containers a { 
+    text-decoration: none;
+}
+
+.button-containers p:first-child {
+    color: #969696;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.button-containers button {
+    background: var(--rocketseat-color);
+    color: #FFFFFF;
+    padding: 9px 35px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Login Forgot Password Page */
+
+.button-containers.forgot {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 32px;
+}
+
+.button-containers.forgot span{
+    background: var(--rocketseat-color);
+    color: #FFFFFF;
+    padding: 9px 35px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+

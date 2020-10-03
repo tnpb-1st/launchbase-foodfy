@@ -1,0 +1,18 @@
+{% extends '../layout.njk'%}
+{% import "../parts/section-recipes.njk" as section%}
+
+{% block content%}
+
+    <div id="homepage-recipe-container">
+        {% if filter %}
+            <h2 id ="search-heading">Buscando por "{{filter}}"</h2>
+        {% endif %}
+        {{section.recipes(recipes)}}
+    </div>
+
+
+    <div class="pagination"
+            data-page = {{pagination.page}}
+            data-total = {{pagination.total}}
+    ></div>
+{% endblock %}

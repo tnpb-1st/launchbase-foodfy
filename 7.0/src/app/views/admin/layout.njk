@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Admin Foodfy</title>
+        {% include './parts/styles.njk' %}
+    </head>
+    <body>
+        <header class="admin-header">
+                <a href="/admin/recipes"><img id="logo" src="/images/logo.png"></a>
+
+                <div id="admin-header-menu">
+                    <a href="/admin/recipes">RECEITAS</a>
+                    <a href="/admin/chefs">CHEFS</a>
+                    <a href="/admin/users">USUÁRIOS</a>
+                    <a href="/admin/" style="width: max-content;">MINHA CONTA</a>
+                    {% if session.userId %}
+                        <form action="/users/logout" method="POST">
+                            <button id = "logout">SAIR</button>
+                        </form>
+                    {% endif %}
+                </div>
+        </header>
+
+        {% include './parts/messages.njk'%}
+
+        <div class="body-container">
+            {% block content %}{% endblock %}
+        </div>
+
+        <script src="/scripts/scripts.js"></script>
+        <script>
+            const a = document.querySelector('#admin-header-menu a:nth-child(4)')
+            if (location.pathname === '/admin/') {
+                a.classList.add('active')
+            } else {
+                a.classList.remove('active')
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+{% macro recipes(recipes) %}
+
+    <section class="recipes-card-container">
+            {% for recipe in recipes %}
+                <div class="recipe-card" id={{recipe.id}}>
+                    <img class="food-image" src="{{recipe.src}}" alt="{{recipe.title}}">
+                    <p class="food-title">{{recipe.title}}</p>
+                    <p class="food-author">por {{recipe.chef_name}}</p>
+                </div>
+            {% endfor %}
+    </section>
+    
+{% endmacro %}

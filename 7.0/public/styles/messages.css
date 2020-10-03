@@ -1,0 +1,53 @@
+/* messages */
+
+@keyframes hidemessage {
+    to {
+        top: -300px;
+        opacity: 0;
+    }
+}
+
+@keyframes incorrectinput {
+    from {
+        border-color: #DDDDDD;
+    }
+    
+    to {
+        border-color: #FF3131
+    }
+}
+
+.message {
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 24.6%;
+    min-height: 9.1%;
+    width: 344px;
+    height: 135px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 16px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: hidemessage 400ms 5s ease-out forwards;
+}
+
+.message.success {
+    background-color: #01B12A;
+    top: 15px;
+    right: 15px;
+}
+
+.message.error {
+    background-color: #DC4747;
+    top: 15px;
+    right: 15px;
+}
+
+input.error {
+    /* border-color: #FF3131; */
+    animation: incorrectinput 5s ease-out;
+}

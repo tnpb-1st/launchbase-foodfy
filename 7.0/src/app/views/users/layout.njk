@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Admin Foodfy</title>
+        {% include './parts/styles.njk' %}
+    </head>
+    <body>
+        <header class="users-header">
+                <a href="/users/recipes"><img id="logo" src="/images/logo.png"></a>
+
+                <div id="users-header-menu">
+                    <a href="/users/recipes">MINHAS RECEITAS</a>
+                    <a href="/users/user-information">MINHA CONTA</a>
+                    {% if session.userId %}
+                        <form action="/users/logout" method="POST">
+                            <button id = "logout">SAIR</button>
+                        </form>
+                    {% endif %}
+                </div>
+        </header>
+
+        {% include './parts/messages.njk'%}
+
+        <div class="body-container">
+            {% block content %}{% endblock %}
+        </div>
+
+        <script src="/scripts/user-scripts.js"></script>
+    </body>
+</html>

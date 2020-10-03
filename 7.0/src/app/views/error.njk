@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/404.css">
+    <title>error 404!</title>
+</head>
+<body>
+    <h1>ERROR 404!</h1>
+    {% if error %}
+        <div class="message error">
+            {{ error }}
+        </div>
+    {% endif %}
+    <img src="/images/404.jpg" alt="">
+    <input type="hidden" id="input"
+    {% if error %}
+        name="error"
+
+    {% else %}
+        name = ""
+    {% endif %}
+    >
+
+    <script>
+        const flag = document.querySelector('#input')
+        if (flag.name === "") {
+            alert("você será redirecionado em 7s")
+            
+            setTimeout(() => {
+
+                window.location.replace('http://localhost:3000/')
+            }, 7000)
+        
+        } else {
+            alert("você será redirecionado em 7s")
+            
+            setTimeout(() => {
+
+                window.location.replace('http://localhost:3000/users/show')
+            }, 7000)
+        }
+    </script>
+</body>
+</html>
